@@ -17,7 +17,11 @@ cd onarket
 ```
 pip3 install -r requirements.txt
 ```
-4. Start the django server 
+4. Run Migrations
+```
+./manage.py migrate
+```
+6. Start the django server 
 ```
 ./manage.py runserver
 ```
