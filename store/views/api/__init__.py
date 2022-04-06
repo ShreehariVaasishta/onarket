@@ -1,1 +1,2 @@
-from store.views.api.seller.product import SellerProductViewSet
+from .seller import *
+from .buyer import *

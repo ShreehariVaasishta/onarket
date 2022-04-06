@@ -6,7 +6,7 @@ class IsBuyerUser(BasePermission):
         return hasattr(request.user, "buyer")
 
     def has_object_permission(self, request, view, obj):
-        return self.has_object_permission(request, view, obj)
+        return hasattr(request.user, "buyer")
 
 
 class IsSellerUser(BasePermission):

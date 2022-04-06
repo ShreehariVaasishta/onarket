@@ -3,6 +3,7 @@ from rest_framework import routers
 from rest_framework_nested import routers as nested_routers
 
 from store.views.api.seller import SellerProductViewSet, SellerProductVariantViewSet
+from store.views.api.buyer.product import BuyerProductViewSet
 
 app_name = "store"
 
@@ -24,6 +25,14 @@ nested_router.register(
     basename="variant",
 )
 
+# Seller Routers
+buyer_router = routers.DefaultRouter()
+buyer_router.register(
+    r"products",
+    BuyerProductViewSet,
+    basename="buyer-products",
+)
+
 
 urlpatterns = [
     path(
@@ -36,11 +45,11 @@ urlpatterns = [
                         include(seller_router.urls + nested_router.urls),
                         name="seller",
                     ),
-                    # path(
-                    #     "buyer/",
-                    #     include(_router.urls),
-                    #     name="buyer",
-                    # ),
+                    path(
+                        "buyer/",
+                        include(buyer_router.urls),
+                        name="buyer",
+                    ),
                 ],
                 app_name,
             ),
