@@ -14,4 +14,8 @@ class IsSellerUser(BasePermission):
         return hasattr(request.user, "seller")
 
     def has_object_permission(self, request, view, obj):
-        return self.has_object_permission(request, view, obj)
+        return (
+            obj.seller == request.user.seller
+            if hasattr(request.user, "seller")
+            else False
+        )
