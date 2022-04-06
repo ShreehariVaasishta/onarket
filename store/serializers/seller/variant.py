@@ -2,7 +2,7 @@ from django.db import transaction
 from rest_framework.serializers import ModelSerializer, SerializerMethodField
 
 from store.models import Variant, VariantOption
-from store.serializers.variant_option import VariantOptionSerializer
+from store.serializers.seller.variant_option import VariantOptionSerializer
 
 
 class VariantSerializer(ModelSerializer):

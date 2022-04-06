@@ -5,7 +5,7 @@ from functools import cached_property
 from rest_framework.serializers import ModelSerializer, SerializerMethodField
 
 from store.models import Product, Category, ProductCategory
-from store.serializers.category import CategorySerializer
+from store.serializers.seller.category import CategorySerializer
 
 
 class ProductListSerializer(ModelSerializer):

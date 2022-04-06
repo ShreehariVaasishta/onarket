@@ -4,7 +4,7 @@ from rest_framework.serializers import SerializerMethodField
 
 from store.models import Product, Category, ProductCategory
 from .list import ProductListSerializer
-from store.serializers.variant import VariantSerializer
+from store.serializers.seller.variant import VariantSerializer
 
 
 class ProductDetailSerializer(ProductListSerializer):
