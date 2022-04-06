@@ -44,6 +44,7 @@ THIRD_PARTY_APPS = [
 
 DUKAAN_APPS = [
     "core",
+    "store",
 ]
 
 
