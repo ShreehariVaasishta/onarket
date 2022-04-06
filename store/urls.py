@@ -2,8 +2,13 @@ from django.urls import path, include
 from rest_framework import routers
 from rest_framework_nested import routers as nested_routers
 
-from store.views.api.seller import SellerProductViewSet, SellerProductVariantViewSet
+from store.views.api.seller import (
+    SellerProductViewSet,
+    SellerProductVariantViewSet,
+    SellerOrdersApiView,
+)
 from store.views.api.buyer import BuyerProductViewSet, BuyerCartApiView, OrderApiView
+
 
 app_name = "store"
 
@@ -44,6 +49,11 @@ urlpatterns = [
                         "seller/",
                         include(seller_router.urls + nested_router.urls),
                         name="seller",
+                    ),
+                    path(
+                        "seller/orders",
+                        SellerOrdersApiView.as_view(),
+                        name="sellers-orders",
                     ),
                     path(
                         "buyer/",
