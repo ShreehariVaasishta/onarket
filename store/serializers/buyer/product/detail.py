@@ -6,7 +6,7 @@ from .list import BuyerProductListSerializer
 class BuyerProductDetailSerializer(ProductDetailSerializer, BuyerProductListSerializer):
     class Meta:
         model = Product
-        fields = BuyerProductListSerializer.Meta.fields
+        fields = BuyerProductListSerializer.Meta.fields + ["variants"]
 
     def create(self, validated_data):
         raise "Buyers cannot create products"
