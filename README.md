@@ -15,7 +15,8 @@ Onarket - Online market for selling anything
 - [x] List Ordered products
 - [ ] Filter on product categories for buyers and sellers
 - [ ] Some more info in the product variation
-- [ ] .....
+
+.... More features to be included
 
 ## Usage
 1. Clone this repository
