@@ -17,4 +17,4 @@ class Buyer(BaseModel):
     )
 
     def __str__(self) -> str:
-        return f"{self.user.username} {self.store_name}"
+        return self.user.username
