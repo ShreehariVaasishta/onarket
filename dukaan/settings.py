@@ -39,6 +39,7 @@ DJANGO_APPS = [
 ]
 THIRD_PARTY_APPS = [
     "rest_framework",
+    "rest_framework.authtoken",
 ]
 
 DUKAAN_APPS = [
@@ -53,11 +54,11 @@ MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
-    "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
+
 
 ROOT_URLCONF = "dukaan.urls"
 
@@ -134,3 +135,11 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # Default user model
 AUTH_USER_MODEL = "core.User"
+
+# DRF
+REST_FRAMEWORK = {
+    "DEFAULT_AUTHENTICATION_CLASSES": [
+        # "rest_framework.authentication.BasicAuthentication",
+        "rest_framework.authentication.TokenAuthentication",
+    ]
+}

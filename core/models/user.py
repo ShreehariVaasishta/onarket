@@ -10,7 +10,11 @@ class User(AbstractUser):
         verbose_name_plural = "Users"
 
     phone = models.CharField(
-        max_length=12, null=False, blank=False, validators=[MinLengthValidator(4)]
+        max_length=12,
+        unique=True,
+        null=False,
+        blank=False,
+        validators=[MinLengthValidator(4)],
     )
     profile_image = models.ImageField(
         upload_to="profile_images",
