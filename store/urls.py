@@ -3,7 +3,7 @@ from rest_framework import routers
 from rest_framework_nested import routers as nested_routers
 
 from store.views.api.seller import SellerProductViewSet, SellerProductVariantViewSet
-from store.views.api.buyer import BuyerProductViewSet, BuyerCartApiView
+from store.views.api.buyer import BuyerProductViewSet, BuyerCartApiView, OrderApiView
 
 app_name = "store"
 
@@ -51,10 +51,16 @@ urlpatterns = [
                         name="buyer",
                     ),
                     path(
-                        "buyer/cart/",  # TODO:merge with buyer/ endpoint
+                        "buyer/cart/",
                         BuyerCartApiView.as_view(),
                         name="buyer-cart",
                     ),
+                    path(
+                        "buyer/order/",
+                        OrderApiView.as_view(),
+                        name="order",
+                    ),
+                    # TODO: include order and cart url paths into buyer/
                 ],
                 app_name,
             ),

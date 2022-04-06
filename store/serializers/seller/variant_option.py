@@ -6,4 +6,4 @@ from store.models import VariantOption
 class VariantOptionSerializer(ModelSerializer):
     class Meta:
         model = VariantOption
-        fields = ["description", "price", "quantity"]
+        fields = ["id", "description", "price", "quantity"]

@@ -1,7 +1,7 @@
 from django.db import models
 
 from core.models import BaseModel
-from store.models import Cart, Product, Variant
+from store.models import Cart, Product, VariantOption
 
 
 class CartProduct(BaseModel):
@@ -12,5 +12,5 @@ class CartProduct(BaseModel):
 
     cart = models.ForeignKey(Cart, on_delete=models.CASCADE)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
-    product_variant = models.ForeignKey(Variant, on_delete=models.CASCADE)
+    product_variant = models.ForeignKey(VariantOption, on_delete=models.CASCADE)
     quantity = models.PositiveIntegerField(default=1)

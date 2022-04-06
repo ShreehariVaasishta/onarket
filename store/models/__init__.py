@@ -5,3 +5,5 @@ from store.models.variant import Variant
 from store.models.variant_option import VariantOption
 from store.models.cart import Cart
 from store.models.cart_product import CartProduct
+from store.models.order import Order
+from store.models.order_product import OrderProduct
